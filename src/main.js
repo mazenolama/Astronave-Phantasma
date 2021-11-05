@@ -236,9 +236,11 @@ class ProceduralTerrain_Demo extends game.Game {
     loader.setPath('./resources/models/x-wing/');
     loader.load('scene.gltf', (gltf) => {
       const model = gltf.scene.children[0];
-      model.scale.setScalar(0.5);
+      model.scale.setScalar(0.45);
 
       const group = new THREE.Group();
+      
+      model.rotateZ(-29.85)
       group.add(model);
 
       this._graphics.Scene.add(group);
@@ -354,7 +356,7 @@ class ProceduralTerrain_Demo extends game.Game {
 
     const scoreTitle = document.createElement('div');
     scoreTitle.className = 'guiBigText';
-    scoreTitle.innerText = 'KILLS';
+    scoreTitle.innerText = 'BANGED';
 
     const scoreText = document.createElement('div');
     scoreText.className = 'guiSmallText';
